@@ -1,10 +1,18 @@
+import { useState } from "react";
 import Clock from "./Clock";
 
 function App(){
+  const [color,setColor]=useState('green');
   return(
-    <div>
+    <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
       <h1>Digital Clock Using React Js</h1>
-      <Clock/>
+      <select name="" id="" onChange={(event)=>setColor(event.target.value)}>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="orange">Orange</option>
+        <option value="blue">Blue</option>
+      </select>
+      <Clock color={color}/>
     </div>
   )
 }
